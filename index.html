@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Play the classic Rock Paper Scissors game against the computer. Best of 5 rounds!">
+    <title>Rock Paper Scissors Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>🎮 Rock Paper Scissors</h1>
+        
+        <div class="players-section">
+            <div class="player">
+                <div class="player-icon">👤</div>
+                <div class="player-name">Player</div>
+            </div>
+            
+            <div class="vs" style="color: white; font-size: 2rem; font-weight: bold;">VS</div>
+            
+            <div class="computer">
+                <div class="computer-icon">🤖</div>
+                <div class="computer-name">Computer</div>
+            </div>
+        </div>
+        
+        <div class="score-section">
+            <div class="round-counter">Round: <span id="currentRound">1</span> / 5</div>
+            <div class="score-display">
+                <div>Player: <span id="playerScore">0</span></div>
+                <div>Computer: <span id="computerScore">0</span></div>
+            </div>
+        </div>
+        
+        <div class="choices">
+            <button class="choice-btn" onclick="playGame('rock')" title="Rock">✊</button>
+            <button class="choice-btn" onclick="playGame('paper')" title="Paper">✋</button>
+            <button class="choice-btn" onclick="playGame('scissors')" title="Scissors">✌️</button>
+        </div>
+    </div>
+
+    <!-- Round Result Popup -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <h2 id="popupTitle"></h2>
+            <div class="emoji" id="popupEmoji"></div>
+            <p id="popupMessage"></p>
+            <button class="close-btn" onclick="closePopup()">Continue</button>
+        </div>
+    </div>
+
+    <!-- Draw Screen -->
+    <div id="drawScreen" class="draw-screen">
+        <div>
+            <h2>It's a Draw!</h2>
+            <p style="font-size: 1.5rem; margin-top: 1rem;">Same choice, try again!</p>
+        </div>
+    </div>
+
+    <!-- Final Result Screen -->
+    <div id="finalResult" class="final-result">
+        <div class="final-content">
+            <h1 id="finalTitle"></h1>
+            <div class="final-emoji" id="finalEmoji"></div>
+            <div style="font-size: 1.5rem;">
+                Final Score: <span id="finalPlayerScore"></span> - <span id="finalComputerScore"></span>
+            </div>
+            <button class="play-again-btn" onclick="resetGame()">Play Again</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
